@@ -178,7 +178,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* ──────────────────────────── HEADER / NAVBAR ──────────────────────── */}
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border border-border px-4">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border border-border px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <a
@@ -227,7 +227,7 @@ export default function HomePage() {
           className="border-b border-border grid grid-cols-1 md:grid-cols-2"
         >
           {/* Left: text */}
-          <div className="border-b border-border md:border-b-0 md:border-r border-border p-4 py-8 md:py-12 lg:py-16 flex flex-col gap-6">
+          <div className="border-b border-border md:border-b-0 md:border-r border-border p-4 md:p-6 lg:p-8 flex flex-col gap-6">
             <div>
               <Badge variant="secondary" className="rounded-sm text-xs font-medium mb-4">
                 <Sparkles className="h-3 w-3 mr-1" />
@@ -282,7 +282,7 @@ export default function HomePage() {
           </div>
 
           {/* Right: visual placeholder / mini preview */}
-          <div className="bg-muted/30 flex flex-col items-center justify-center px-4 py-16 md:py-24 gap-4 min-h-[340px] relative overflow-hidden">
+          <div className="bg-muted/30 flex flex-col items-center justify-center p-4 md:p-6 lg:p-8 gap-4 min-h-[340px] relative overflow-hidden">
             {/* Blueprint grid overlay - pure CSS via Tailwind background */}
             <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] [background-size:24px_24px]" />
 
@@ -333,10 +333,10 @@ export default function HomePage() {
         <section
           id="features"
           aria-labelledby="features-heading"
-          className="border-b border-border"
+          className="border-border"
         >
           {/* Section header */}
-          <div className="px-4 py-10 border-b border-border">
+          <div className="p-4 md:p-6 lg:p-8 border-b border-border">
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mb-3">Funkcje</p>
             <h2
               id="features-heading"
@@ -356,9 +356,9 @@ export default function HomePage() {
             {features.map((feature) => (
               <article
                 key={feature.title}
-                className={`${feature.span} group border-b border-r border-border p-4 py-6 flex flex-col gap-4 hover:bg-muted/30 transition-colors duration-200 last:border-r-0`}
+                className={`${feature.span} group border-b border-r border-border p-4 md:p-6 lg:p-8 flex flex-col gap-4 hover:bg-muted/30 transition-colors duration-200 last:border-r-0`}
               >
-                <div className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground group-hover:text-foreground group-hover:border-foreground transition-colors duration-200">
+                <div className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted-foreground group-hover:text-foreground group-hover:border-foreground transition-colors duration-200">
                   {feature.icon}
                 </div>
                 <div>
@@ -381,7 +381,7 @@ export default function HomePage() {
           className="border-b border-border"
         >
           {/* Section header */}
-          <div className="px-4 py-10 border-b border-border">
+          <div className="p-4 md:p-6 lg:p-8 border-b border-border">
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mb-3">Proces</p>
             <h2
               id="how-heading"
@@ -396,7 +396,7 @@ export default function HomePage() {
             {steps.map((step, idx) => (
               <li
                 key={step.number}
-                className={`flex flex-col gap-5 p-4 py-6 md:p-8 border-b border-r border-border hover:bg-muted/30 transition-colors duration-200 ${idx === steps.length - 1 ? "md:border-r-0" : ""}`}
+                className={`flex flex-col gap-5 p-4 md:p-6 lg:p-8 border-b border-r border-border hover:bg-muted/30 transition-colors duration-200 ${idx === steps.length - 1 ? "md:border-r-0" : ""}`}
               >
                 <span className="text-4xl font-bold tracking-tight text-muted-foreground/40 leading-none select-none">
                   {step.number}
@@ -421,7 +421,7 @@ export default function HomePage() {
           className="border-b border-border"
         >
           {/* Section header */}
-          <div className="px-4 py-10 border-b border-border">
+          <div className="p-4 md:p-6 lg:p-8 border-b border-border">
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mb-3">Cennik</p>
             <h2
               id="pricing-heading"
@@ -441,7 +441,7 @@ export default function HomePage() {
             {plans.map((plan, idx) => (
               <article
                 key={plan.name}
-                className={`flex flex-col gap-6 px-4 py-6 border-b border-r border-border ${idx === plans.length - 1 ? "md:border-r-0" : ""} ${plan.highlighted
+                className={`flex flex-col gap-6 p-4 md:p-6 lg:p-8 border-b border-r border-border ${idx === plans.length - 1 ? "md:border-r-0" : ""} ${plan.highlighted
                   ? "bg-foreground text-background"
                   : "hover:bg-muted/30 transition-colors duration-200"
                   }`}
@@ -499,7 +499,7 @@ export default function HomePage() {
         {/* ── CTA STRIP ────────────────────────────────────────────────────── */}
         <section
           aria-label="Wywołanie do działania"
-          className="border-b border-border px-4 py-16 md:py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+          className="min-h-[30vh] border-b border-border p-4 md:p-6 lg:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
         >
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight max-w-lg">
@@ -522,11 +522,11 @@ export default function HomePage() {
 
       {/* ──────────────────────────── FOOTER ────────────────────────────────── */}
       <footer className="border-t border-border" aria-label="Stopka">
-        <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-4 border-x border-border">
+        <div className="max-w-7xl mx-auto border-x border-border">
           {/* Main footer grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border-b border-border">
             {/* Brand col */}
-            <div className="border-b sm:border-b-0 sm:border-r border-border px-4 py-6 flex flex-col gap-3 sm:col-span-2 md:col-span-1">
+            <div className="border-b sm:border-b-0 sm:border-r border-border p-4 md:p-6 lg:p-8 flex flex-col gap-3 sm:col-span-2 md:col-span-1">
               <div className="flex items-center gap-2">
                 <div className="flex items-center justify-center w-7 h-7 rounded-md bg-foreground text-background text-xs font-bold">
                   B
@@ -540,7 +540,7 @@ export default function HomePage() {
             </div>
 
             {/* Product nav */}
-            <nav aria-label="Nawigacja w stopce – Produkt" className="border-b sm:border-b-0 sm:border-r border-border px-4 py-6">
+            <nav aria-label="Nawigacja w stopce – Produkt" className="border-b sm:border-b-0 sm:border-r border-border p-4 md:p-6 lg:p-8">
               <h3 className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-4">
                 Produkt
               </h3>
@@ -564,7 +564,7 @@ export default function HomePage() {
             </nav>
 
             {/* Legal nav */}
-            <nav aria-label="Nawigacja w stopce – Prawne" className="border-b sm:border-b-0 sm:border-r border-border px-4 py-6">
+            <nav aria-label="Nawigacja w stopce – Prawne" className="border-b sm:border-b-0 sm:border-r border-border p-4 md:p-6 lg:p-8">
               <h3 className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-4">
                 Prawne
               </h3>
@@ -587,7 +587,7 @@ export default function HomePage() {
             </nav>
 
             {/* CTA col */}
-            <div className="px-4 py-6 flex flex-col justify-between gap-4">
+            <div className="p-4 md:p-6 lg:p-8 flex flex-col justify-between gap-4">
               <div>
                 <h3 className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-4">
                   Zacznij teraz
@@ -603,7 +603,7 @@ export default function HomePage() {
           </div>
 
           {/* Bottom bar */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-6 md:px-8 py-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 p-4 md:p-6 lg:p-8">
             <p className="text-xs text-muted-foreground">
               © 2026 BrandMaker. Wszelkie prawa zastrzeżone.
             </p>
