@@ -77,14 +77,14 @@ const features = [
         icon: <Users className="h-5 w-5" />,
         title: "Social Media",
         description: "Prezentacja brandingu w mediach społecznościowych – mockupy profili i postów.",
-        span: "md:col-span-1",
+        span: "md:col-span-2",
         lastInRow: false,
     },
     {
         icon: <BookOpen className="h-5 w-5" />,
         title: "BrandBook (20–30 stron)",
         description: "Kompletna dokumentacja w formacie prezentacji PDF 16:9. Twoja strategia w pigułce.",
-        span: "md:col-span-2",
+        span: "md:col-span-1",
         lastInRow: true,
     },
 ];

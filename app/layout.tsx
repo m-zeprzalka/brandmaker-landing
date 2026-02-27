@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -7,6 +7,13 @@ const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-heading",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
